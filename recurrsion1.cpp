@@ -250,6 +250,18 @@ void substring_ascii(string a,string b){
     substring_ascii(a+c,b.substr(1));
     substring_ascii(a+to_string(c+0),b.substr(1));
 }
+void random_mobile_number(string a,string b){
+    if(b.length()==0){
+        cout<<a<<endl;
+        return;
+    }
+    int c=b[0]-'0';
+    string d="";
+    for(int i=(c-1)*3;i<c*3;i++){
+        d+=to_string(i);
+        random_mobile_number(a+d,b.substr(1));
+    }
+}
 void dice(string a,int b){
     if(b==0){
         cout<<a<<endl;
