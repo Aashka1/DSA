@@ -286,6 +286,22 @@ void dice(string a,int b){
     }
 
 }
+#include<vector>
+std::vector<std::vector<std::string>> print_subsequence(int *a,int b){
+static vector<vector<string>>v;
+v.push_back(vector<string>());
+
+for(int i=0;i<b;i++){
+    int c=v.size();
+    for(int j=0;j<c;j++){
+        vector<string>temp=v[j];
+        temp.push_back(std::to_string(a[i]));
+        v.push_back(temp);
+    }
+
+}
+return v;
+}
 int main() {
     int a[10] = {11, 2, 36, 4, 51, 6, 73, 8, 90, 10};
     int n = sizeof(a) / sizeof(a[0]);
