@@ -250,6 +250,18 @@ void substring_ascii(string a,string b){
     substring_ascii(a+c,b.substr(1));
     substring_ascii(a+to_string(c+0),b.substr(1));
 }
+void permutation(string a,string b){
+    if(b.length()==0){
+        cout<<a<<endl;
+        return;
+    }
+    char c=b[0];
+    for(int i=0;i<=a.length();i++){
+        string f=a.substr(0,i);
+        string s=a.substr(i);
+        permutation(f+c+s,b.substr(1));
+    }
+}
 void random_mobile_number(string a,string b){
     if(b.length()==0){
         cout<<a<<endl;
