@@ -250,6 +250,7 @@ void substring_ascii(string a,string b){
     substring_ascii(a+c,b.substr(1));
     substring_ascii(a+to_string(c+0),b.substr(1));
 }
+<<<<<<< HEAD
 void random_mobile_number(string a,string b){
     if(b.length()==0){
         cout<<a<<endl;
@@ -262,6 +263,8 @@ void random_mobile_number(string a,string b){
         random_mobile_number(a+d,b.substr(1));
     }
 }
+=======
+>>>>>>> f566a6f25bd735ba6151eed754acce96cc02a784
 void permutation(string a,string b){
     if(b.length()==0){
         cout<<a<<endl;
@@ -274,6 +277,21 @@ void permutation(string a,string b){
         permutation(f+c+s,b.substr(1));
     }
 }
+<<<<<<< HEAD
+=======
+void random_mobile_number(string a,string b){
+    if(b.length()==0){
+        cout<<a<<endl;
+        return;
+    }
+    int c=b[0]-'0';
+    string d="";
+    for(int i=(c-1)*3;i<c*3;i++){
+        d+=to_string(i);
+        random_mobile_number(a+d,b.substr(1));
+    }
+}
+>>>>>>> f566a6f25bd735ba6151eed754acce96cc02a784
 void dice(string a,int b){
     if(b==0){
         cout<<a<<endl;
@@ -333,6 +351,7 @@ int main() {
     // }
     // cout << endl;
     // cout<<b;
+<<<<<<< HEAD
 #include<vector>
 std::vector<int>print_subsequence(string a[]){
 static vector<vector<string>>v;
@@ -347,3 +366,5 @@ for(int i=0;i<b;i++){
     }
 }
 }
+=======
+>>>>>>> f566a6f25bd735ba6151eed754acce96cc02a784

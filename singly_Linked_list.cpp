@@ -170,13 +170,36 @@ void reverse(list *&head){
     head=prev;
 }
 int main(){
-    list *head=new list(1);
-    list *head1=new list(1);
-    insert(head,3);
-    insert(head1,3);insert(head1,6);insert(head1,9);insert(head1,12);
-    insert(head,2);
-    insert(head,1);
-    insert(head,5);
+    // Create two lists
+    list *head = new list(1);
+    list *head1 = new list(1);
+
+    // Insert elements into the first list
+    insert(head, 3);
+    insert(head, 2);
+    insert(head, 1);
+    insert(head, 5);
+
+    // Insert elements into the second list
+    insert(head1, 3);
+    insert(head1, 6);
+    insert(head1, 9);
+    insert(head1, 12);
+
+    // Print both lists before merging
+    cout << "List 1: ";
+    sorted(head);
+    print(head);
+    cout << "List 2: ";
+    sorted(head1);
+    print(head1);
+
+    // Merge the two lists
+    merge_linkedlist(head, head1);
+
+    // Print the merged list
+    cout << "Merged List: ";
+    print(head);
     // print(head);
     // reverse(head);
     // print(head);
@@ -184,7 +207,7 @@ int main(){
     // deletes(head,3);
     // recusive_insertion_pos(head,6,3);
     // sorted(head);
-    merge_linkedlist(head,head1);
+    
     // remove_duplicates(head);
-    print(head);
+   
 }
