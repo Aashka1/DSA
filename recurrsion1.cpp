@@ -250,6 +250,30 @@ void substring_ascii(string a,string b){
     substring_ascii(a+c,b.substr(1));
     substring_ascii(a+to_string(c+0),b.substr(1));
 }
+void random_mobile_number(string a,string b){
+    if(b.length()==0){
+        cout<<a<<endl;
+        return;
+    }
+    int c=b[0]-'0';
+    string d="";
+    for(int i=(c-1)*3;i<c*3;i++){
+        d+=to_string(i);
+        random_mobile_number(a+d,b.substr(1));
+    }
+}
+void permutation(string a,string b){
+    if(b.length()==0){
+        cout<<a<<endl;
+        return;
+    }
+    char c=b[0];
+    for(int i=0;i<=a.length();i++){
+        string f=a.substr(0,i);
+        string s=a.substr(i);
+        permutation(f+c+s,b.substr(1));
+    }
+}
 void dice(string a,int b){
     if(b==0){
         cout<<a<<endl;
@@ -262,15 +286,41 @@ void dice(string a,int b){
     }
 
 }
+#include<vector>
+std::vector<std::vector<std::string>> print_subsequence(int *a,int b){
+static vector<vector<string>>v;
+v.push_back(vector<string>());
+
+for(int i=0;i<b;i++){
+    int c=v.size();
+    for(int j=0;j<c;j++){
+        vector<string>temp=v[j];
+        temp.push_back(std::to_string(a[i]));
+        v.push_back(temp);
+    }
+
+}
+return v;
+}
 int main() {
     int a[10] = {11, 2, 36, 4, 51, 6, 73, 8, 90, 10};
     int n = sizeof(a) / sizeof(a[0]);
-    string s="ab";
-    dice("",4);
-   
+    int m[]={1,2,3};
+    int b=sizeof(m)/sizeof(m[0]);
+    auto subsequences = print_subsequence(m,b);
+    
+    for (const auto& subseq : subsequences) {
+        for (const auto& str : subseq) {
+            std::cout << str << " ";
+        }
+        std::cout << std::endl;
+    }
    
     return 0;
 }
+// string s="abc";
+    // permutation("",s);
+   
  // substring_ascii("",s);
     // string b="";
     // skip_string(s,b);
@@ -283,3 +333,17 @@ int main() {
     // }
     // cout << endl;
     // cout<<b;
+#include<vector>
+std::vector<int>print_subsequence(string a[]){
+static vector<vector<string>>v;
+v.push_back(vector<string>());
+int b=sizeof(a)/sizeof(a[0]);
+for(int i=0;i<b;i++){
+    int c=v.size();
+    for(int j=0;j<c;j++){
+        vector<string>temp=v[j];
+        temp.push_back((a[i]));
+        v.push_back(temp);
+    }
+}
+}
